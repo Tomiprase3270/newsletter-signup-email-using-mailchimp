@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const { json } = require("body-parser");
 const request = require("request");
 const https = require("https");
-const apiKey = process.env.APIKEY
-const url = process.env.URL
+const apiKey = process.env.APIKEY;
+const url = process.env.URL;
 let port = process.env.PORT;
 
 const app = express();
@@ -19,7 +19,7 @@ app.listen(port, () => {
 })
 
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public/"));
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
