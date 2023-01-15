@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  // untuk deploy ke vercel dibutuhkan engine yang dipakai yaitu node dengan versinya
+  "engines": {
+    "node": "18.x"
+  },
+  // untuk deploy ke vercel pakai start
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tomi prasetyo",
