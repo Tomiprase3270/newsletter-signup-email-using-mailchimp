@@ -1,9 +1,11 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const { json } = require("body-parser");
 const request = require("request");
 const https = require("https");
-const apiKey = "9fbd28a7c66add430e0c1683688c4ff6-us14"
+const apiKey = process.env.APIKEY
+const url = process.env.URL
 let port = process.env.PORT;
 
 const app = express();
@@ -43,8 +45,6 @@ app.post("/", (req, res) => {
 
     const jsonData = JSON.stringify(data);
 
-    const url = "https://us14.api.mailchimp.com/3.0/lists/e5b2a72441";
-
     const options = {
 
         method: "POST",
@@ -83,9 +83,3 @@ app.post("/failure", (req, res) => {
 app.post("/success", (req, res) => {
     res.redirect("/")
 });
-
-// api key mailchimp
-// 9fbd28a7c66add430e0c1683688c4ff6-us14
-
-// unique id
-// e5b2a72441
