@@ -80,6 +80,10 @@ app.post("/failure", (req, res) => {
 });
 
 
+app.post("/success", (req, res) => {
+    res.redirect("/")
+});
+
 // api key mailchimp
 // 9fbd28a7c66add430e0c1683688c4ff6-us14
 
